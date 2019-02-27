@@ -1,0 +1,7 @@
+<resources>
+
+    <dimen name="connector_height">40dp</dimen>
+    <dimen name="wifi_signal_margin">16dp</dimen>
+    <dimen name="action_bar_padding">48dp</dimen>
+    <dimen name="action_button_minwidth">56dp</dimen>
+</resources>

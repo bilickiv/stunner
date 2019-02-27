@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--xmlns:picker="http://schemas.android.com/apk/res/hu.uszeged.inf.wlab.stunner" -->
+
+    <CheckBoxPreference
+        android:key="@string/pref_key_background"
+        android:summary="@string/pref_background_service_summary"
+        android:title="@string/pref_background_service_title" />
+
+
+    <!-- TODO: háttérben való futás esetén mi történik? -->
+    <!-- <CheckBoxPreference
+        android:key="@string/pref_key_parse"
+        android:summary="@string/pref_parse_summary"
+        android:title="@string/pref_parse_title"
+        android:defaultValue="true" /> -->
+
+    <hu.uszeged.inf.wlab.stunner.preference.NumberPickerPreference
+        android:key="prefTimeout"
+        android:title="@string/pref_timeout_title"
+        android:defaultValue="7900" />
+
+</PreferenceScreen>

@@ -1,0 +1,277 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:keepScreenOn="true"
+    android:paddingTop="0dp"
+    tools:context=".MainActivity" >
+	
+    <ImageView
+        android:id="@+id/glory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:src="@drawable/cloud_bg"
+        android:contentDescription="@string/app_name"/>
+    
+<!-- ICONS AND PICTOS     -->
+    <RelativeLayout
+        android:id="@+id/remoteContainer"
+        android:paddingTop="@dimen/action_bar_padding"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible">
+	    <ImageView
+	        android:id="@+id/cloud"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentTop="true"
+	        android:layout_centerHorizontal="true"
+	        android:scaleType="centerCrop"
+	        android:background="@drawable/cloud_standby"
+	        android:contentDescription="@string/app_name"/>
+	    <TextView
+	        android:id="@+id/internetInfo"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignBottom="@+id/cloud"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginBottom="@dimen/cloud_margin"
+	        android:visibility="visible"
+	        style="@style/infoText"/>
+	    <View
+	        android:id="@+id/connector"
+	        android:layout_width="@dimen/connector_width"
+	        android:layout_height="@dimen/connector_height"
+	        android:layout_below="@+id/cloud"
+	        android:layout_centerHorizontal="true"
+	        android:background="@drawable/connector"/>	    
+	    <ImageView
+	        android:id="@+id/connectionMode"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/connector"
+	        android:layout_centerHorizontal="true"
+	        android:src="@drawable/nat_unknown"
+	        android:visibility="visible"
+	        android:contentDescription="@string/app_name"/>
+    </RelativeLayout>
+    
+    <ScrollView
+        android:scrollbars="none"
+       	android:layout_height="match_parent"
+		android:layout_width="wrap_content"
+		android:layout_alignTop="@+id/phoneContainer"
+		android:layout_alignBottom="@+id/phoneContainer">
+    	<TextView
+    		android:id="@+id/log"
+			android:layout_marginTop="@dimen/activity_vertical_margin"
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:textColor="@color/log_color"
+			android:layout_gravity="bottom"
+			android:singleLine="false"
+			android:ellipsize="end"
+			android:textSize="@dimen/log_size"
+			android:textAppearance="?android:attr/textAppearanceSmall"/>
+    </ScrollView>
+    
+    <RelativeLayout
+        android:id="@+id/phoneContainer"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/action_bar_padding"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible">
+            	    
+	    <ImageView
+	        android:id="@+id/wifisignal"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentTop="true"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginBottom="@dimen/wifi_signal_margin"
+	        android:background="@drawable/wifisignal"
+	        android:contentDescription="@string/app_name"/>
+	    <RelativeLayout
+	        android:layout_below="@+id/wifisignal"
+	        android:layout_width="wrap_content"
+        	android:layout_height="wrap_content">
+		    <ImageView
+		        android:id="@+id/phone"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:src="@drawable/phone_selector"
+		        android:contentDescription="@string/app_name"/>
+		    <TextView
+		        android:id="@+id/stunit"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_centerInParent="true"
+		        android:text="@string/stun_it"
+		     	style="@style/infoTextHeader"/>
+	    </RelativeLayout>
+    </RelativeLayout>
+    
+<!--     TEXTS AND HEADERS -->
+    <RelativeLayout
+        android:id="@+id/labelsContainer"
+	   	android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+	   	android:visibility="invisible">
+	   	<TextView
+	        android:id="@+id/natHeader"
+	        style="@style/infoTextHeader"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentTop="true" 
+	        android:text="@string/nat_detected" />
+	    <LinearLayout
+	        android:id="@+id/natLabels"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/natHeader"
+	        android:layout_alignLeft="@+id/natHeader"
+	        android:orientation="vertical" >
+	        <TextView
+	            android:id="@+id/natTypeLabel"
+	            style="@style/infoText"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/phone_data_connection_type" />
+	        <TextView
+	            android:id="@+id/natIPLabel"
+	            style="@style/infoText"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/public_ip" />
+	    </LinearLayout>
+	    <LinearLayout
+	        android:id="@+id/nat"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:paddingLeft="@dimen/activity_horizontal_margin"
+	        android:layout_alignLeft="@+id/phoneValues"
+	        android:layout_alignTop="@+id/natLabels"
+	        android:gravity="left"
+	        android:orientation="vertical" >
+	        <TextView
+	            android:id="@+id/natType"
+	            style="@style/infoText"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content" />
+	        <TextView
+	            android:id="@+id/natIP"
+	            style="@style/infoText"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"/>
+	    </LinearLayout>
+	    <TextView
+	         android:id="@+id/phoneConnectionType"
+	         style="@style/infoTextHeader"
+	         android:layout_below="@+id/nat"
+	         android:layout_width="wrap_content"
+	         android:layout_height="wrap_content"
+	         android:text="@string/mobile_data_connected" />
+	     <LinearLayout
+	         android:id="@+id/phoneLables"
+	         android:layout_width="wrap_content"
+	         android:layout_height="wrap_content"
+	         android:layout_alignLeft="@+id/phoneConnectionType"
+	         android:layout_below="@+id/phoneConnectionType"
+	         android:orientation="vertical" >
+	         <TextView
+	             android:id="@+id/phoneIPLabel"
+	             style="@style/infoText"
+	             android:layout_width="wrap_content"
+	             android:layout_height="wrap_content"
+	             android:text="@string/phone_local_ip" />
+	         <TextView
+	             android:id="@+id/phoneCarrierLabel"
+	             style="@style/infoText"
+	             android:layout_width="wrap_content"
+	             android:layout_height="wrap_content"
+	             android:text="@string/phone_carrier" />
+	         <TextView
+	             android:id="@+id/phoneDataConnectionTypeLabel"
+	             style="@style/infoText"
+	             android:layout_width="wrap_content"
+	             android:layout_height="wrap_content"
+	             android:text="@string/phone_data_connection_type" />
+	         <TextView
+	             android:id="@+id/phoneMACLabel"
+	             style="@style/infoText"
+	             android:layout_width="wrap_content"
+	             android:layout_height="wrap_content"
+	             android:text="@string/phone_mac" />         
+	         <TextView
+	             android:id="@+id/phoneSSIDLabel"
+	             style="@style/infoText"
+	             android:layout_width="wrap_content"
+	             android:layout_height="wrap_content"
+	             android:text="@string/ssid_label" />
+	         <TextView
+	             android:id="@+id/phoneLinkSpeedLabel"
+	             style="@style/infoText"
+	             android:layout_width="wrap_content"
+	             android:layout_height="wrap_content"
+	             android:text="@string/link_speed_label" />
+	         <TextView
+	             android:id="@+id/phoneSingalStrengthLabel"
+	             style="@style/infoText"
+	             android:layout_width="wrap_content"
+	             android:layout_height="wrap_content"
+	             android:text="@string/signal_strength_label" />                                          
+	     </LinearLayout>    
+	     <LinearLayout
+	         android:id="@+id/phoneValues"
+	         android:layout_width="wrap_content"
+	         android:layout_height="wrap_content"
+	         android:layout_below="@+id/phoneConnectionType"
+			 android:layout_toRightOf="@+id/phoneLables"
+			 android:paddingLeft="@dimen/activity_horizontal_margin"
+	         android:gravity="left"
+	         android:orientation="vertical" >
+	         <TextView
+	             android:id="@+id/phoneIP"
+	             style="@style/infoText"
+	             android:layout_width="wrap_content"
+	             android:layout_height="wrap_content" />
+	         <TextView
+	             android:id="@+id/phoneCarrier"
+	             style="@style/infoText"
+	             android:layout_width="wrap_content"
+	             android:layout_height="wrap_content" />
+	         <TextView
+	             android:id="@+id/phoneDataConnectionType"
+	             style="@style/infoText"
+	             android:layout_width="wrap_content"
+	             android:layout_height="wrap_content"/>
+	         <TextView
+	             android:id="@+id/phoneMAC"
+	             style="@style/infoText"
+	             android:layout_width="wrap_content"
+	             android:layout_height="wrap_content" />
+	         <TextView
+	             android:id="@+id/phoneSSID"
+	             style="@style/infoText"
+	             android:layout_width="wrap_content"
+	             android:layout_height="wrap_content"/>
+	         <TextView
+	             android:id="@+id/phoneLinkSpeed"
+	             style="@style/infoText"
+	             android:layout_width="wrap_content"
+	             android:layout_height="wrap_content"/>
+	         <TextView
+	             android:id="@+id/phoneSingalStrength"
+	             style="@style/infoText"
+	             android:layout_width="wrap_content"
+	             android:layout_height="wrap_content" />                          
+	     </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

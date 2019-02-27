@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="hu.uszeged.inf.wlab.stunner.screens.bookmarks.BookmarksActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayoutLabels"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentLeft="true">
+
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/date"
+            style="@style/infoText"/>
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/phone_local_ip"
+            style="@style/infoText"/>
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/public_ip"
+            style="@style/infoText"/>
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/result"
+            style="@style/infoText"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/type"
+            android:paddingRight="3.6mm"
+            style="@style/infoText"/>
+        <TextView
+            android:id="@+id/textViewNetworkT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/network"
+            android:visibility="gone"
+            style="@style/infoText"/>
+        <TextView
+            android:id="@+id/textViewCarrierT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/provider"
+            android:visibility="gone"
+            style="@style/infoText"/>
+        <TextView
+            android:id="@+id/textViewSsidT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ssid"
+            android:visibility="gone"
+            style="@style/infoText" />
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/linearLayoutValues"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/default_padding"
+        android:layout_toRightOf="@+id/linearLayoutLabels"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textViewDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/date"
+            style="@style/infoText"/>
+        <TextView
+            android:id="@+id/textViewLocalIP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/phone_local_ip"
+            style="@style/infoText"/>
+        <TextView
+            android:id="@+id/textViewPublicIP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/public_ip"
+            style="@style/infoText"/>
+        <TextView
+            android:id="@+id/textViewResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/result"
+            style="@style/infoText"/>
+
+        <TextView
+            android:id="@+id/textViewConnectionInterface"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/type"
+            style="@style/infoText"/>
+        <TextView
+            android:id="@+id/textViewNetwork"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/network"
+            android:visibility="gone"
+            style="@style/infoText"/>
+        <TextView
+            android:id="@+id/textViewProvider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/provider"
+            android:visibility="gone"
+            style="@style/infoText"/>
+        <TextView
+            android:id="@+id/textViewSsid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/na"
+            android:visibility="gone"
+            style="@style/infoText"
+
+            />
+    </LinearLayout>
+
+</RelativeLayout>

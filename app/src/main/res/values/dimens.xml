@@ -1,0 +1,16 @@
+<resources>
+
+    <dimen name="activity_horizontal_margin">8dp</dimen>
+    <dimen name="activity_vertical_margin">8dp</dimen>
+    <dimen name="cloud_margin">16dp</dimen>
+    <dimen name="connector_width">4dp</dimen>
+    <dimen name="log_size">8sp</dimen>
+    <dimen name="default_padding">8dp</dimen>
+    
+    <dimen name="connector_height">40dp</dimen>
+    <dimen name="wifi_signal_margin">16dp</dimen>
+    <dimen name="action_bar_padding">48dp</dimen>
+    <dimen name="action_button_minwidth">56dp</dimen>
+    <dimen name="action_bar_height">10dp</dimen>
+
+</resources>

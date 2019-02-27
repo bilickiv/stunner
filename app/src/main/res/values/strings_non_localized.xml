@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="decibel">" dB"</string>
+    <string name="n_a">N/A</string>
+    <string name="ssid_label">WIFI SSID:</string>    
+</resources>
